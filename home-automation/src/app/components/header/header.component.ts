@@ -1,0 +1,116 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+
+@Component({
+  selector: 'app-header',
+  standalone: true,
+  imports: [CommonModule, RouterLink, RouterLinkActive],
+  template: `
+    <header class="navbar">
+      <div class="navbar-brand">
+        <h1>OVUM</h1>
+        <p class="subtitle">Smart Node</p>
+      </div>
+      
+      <nav class="navbar-menu">
+        <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <a routerLink="/services" routerLinkActive="active">Services</a>
+        <a routerLink="/technician" routerLinkActive="active">Technician</a>
+        <a routerLink="/blog" routerLinkActive="active">Blog</a>
+        <a routerLink="/careers" routerLinkActive="active">Careers</a>
+        <a routerLink="/contact" routerLinkActive="active">Contact Us</a>
+      </nav>
+    </header>
+  `,
+  styles: [`
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--spacing-md) var(--spacing-lg);
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(6, 182, 212, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    .navbar-brand {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .navbar-brand h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin: 0;
+      letter-spacing: 2px;
+    }
+    
+    .subtitle {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin: 0;
+      letter-spacing: 1px;
+    }
+    
+    .navbar-menu {
+      display: flex;
+      gap: var(--spacing-lg);
+      align-items: center;
+    }
+    
+    .navbar-menu a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .navbar-menu a:hover {
+      color: var(--primary-color);
+      background: rgba(6, 182, 212, 0.1);
+    }
+    
+    .navbar-menu a.active {
+      color: var(--primary-color);
+    }
+    
+    .navbar-menu a.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 16px;
+      right: 16px;
+      height: 2px;
+      background: var(--primary-color);
+      box-shadow: 0 0 8px var(--primary-color);
+    }
+    
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: var(--spacing-md);
+      }
+      
+      .navbar-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--spacing-sm);
+      }
+      
+      .navbar-menu a {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+      }
+    }
+  `]
+})
+export class HeaderComponent { }
