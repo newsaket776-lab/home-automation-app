@@ -1,0 +1,18 @@
+<div class="page-container">
+      <div class="page-header">
+        <h1>Our Services</h1>
+        <p>Comprehensive smart home solutions tailored to your needs</p>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card glass-panel" *ngFor="let service of services">
+          <div class="service-icon">{{ service.icon }}</div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+          <ul class="service-features">
+            <li *ngFor="let feature of service.features">{{ feature }}</li>
+          </ul>
+          <button class="btn-learn-more">Learn More</button>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,50 @@
+<div class="page-container">
+      <div class="page-header">
+        <h1>Join Our Team</h1>
+        <p>Build the future of smart home technology with us</p>
+      </div>
+      
+      <section class="company-culture glass-panel">
+        <h2>Why Work at OVUM?</h2>
+        <div class="culture-grid">
+          <div class="culture-item">
+            <div class="culture-icon">🚀</div>
+            <h3>Innovation First</h3>
+            <p>Work with cutting-edge technology and shape the future of home automation</p>
+          </div>
+          <div class="culture-item">
+            <div class="culture-icon">🤝</div>
+            <h3>Collaborative Team</h3>
+            <p>Join a diverse team of passionate professionals who support each other</p>
+          </div>
+          <div class="culture-item">
+            <div class="culture-icon">📈</div>
+            <h3>Career Growth</h3>
+            <p>Continuous learning opportunities and clear paths for advancement</p>
+          </div>
+          <div class="culture-item">
+            <div class="culture-icon">⚖️</div>
+            <h3>Work-Life Balance</h3>
+            <p>Flexible schedules, remote options, and generous time off</p>
+          </div>
+        </div>
+      </section>
+      
+      <section class="open-positions">
+        <h2>Open Positions</h2>
+        <div class="positions-list">
+          <div class="position-card glass-panel" *ngFor="let position of openPositions">
+            <div class="position-header">
+              <h3>{{ position.title }}</h3>
+              <span class="position-type">{{ position.type }}</span>
+            </div>
+            <div class="position-meta">
+              <span>📍 {{ position.location }}</span>
+              <span>💼 {{ position.department }}</span>
+            </div>
+            <p>{{ position.description }}</p>
+            <button class="btn-apply">Apply Now</button>
+          </div>
+        </div>
+      </section>
+    </div>

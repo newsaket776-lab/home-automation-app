@@ -1,0 +1,22 @@
+<div class="page-container">
+      <div class="page-header">
+        <h2>Rooms</h2>
+        <p class="subtitle">Manage devices by room</p>
+      </div>
+
+      <div *ngFor="let room of roomGroups()" class="room-section glass-panel">
+        <div class="room-header">
+           <h3>{{ room.name }}</h3>
+           <span class="device-count">{{ room.devices.length }} Devices</span>
+        </div>
+        
+        <div class="room-grid">
+           <app-widget 
+            *ngFor="let device of room.devices" 
+            [device]="device"
+            (toggle)="homeService.toggleDevice(device.id)"
+            (valueChange)="homeService.updateValue(device.id, $event)">
+          </app-widget>
+        </div>
+      </div>
+    </div>

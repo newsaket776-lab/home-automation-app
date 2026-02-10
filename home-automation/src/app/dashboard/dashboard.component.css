@@ -1,0 +1,33 @@
+.dashboard-container {
+      padding: var(--spacing-md);
+    }
+    
+    .floor-layout {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: var(--spacing-lg);
+    }
+    
+    .room-card {
+      min-height: 180px;
+      padding: var(--spacing-md);
+      position: relative;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .room-header h3 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: var(--spacing-md);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding-bottom: 8px;
+    }
+    
+    .room-devices {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-md);
+    }

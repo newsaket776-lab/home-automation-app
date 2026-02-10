@@ -1,0 +1,24 @@
+<div class="widget" [class.active]="isActive" (click)="onToggle()">
+    <div class="icon-ring">
+        <div class="icon-inner">
+            <!-- Dynamic Icon based on type -->
+            <span *ngIf="device.type === 'light'">💡</span>
+            <span *ngIf="device.type === 'thermostat'">🌡️</span>
+            <span *ngIf="device.type === 'shutter'">🪟</span>
+            <span *ngIf="device.type === 'water-heater'">💧</span>
+            <span *ngIf="device.type === 'extraction'">🌪️</span>
+            <span *ngIf="device.type === 'tv'">📺</span>
+            <span *ngIf="device.type === 'lock'">🔒</span>
+            <span *ngIf="device.type === 'camera'">📹</span>
+        </div>
+
+        <!-- Status indicator dot -->
+        <div class="status-dot"></div>
+    </div>
+
+    <div class="label">
+        <span class="name">{{ device.name }}</span>
+        <span class="state" *ngIf="device.value">{{ device.value }}{{ getUnit() }}</span>
+        <span class="state" *ngIf="!device.value">{{ device.status | titlecase }}</span>
+    </div>
+</div>

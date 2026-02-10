@@ -1,0 +1,57 @@
+<div class="page-container">
+      <div class="page-header">
+        <h2>Security</h2>
+        <p class="subtitle">Monitor your home's safety</p>
+      </div>
+
+      <div class="system-status glass-panel hover-effect">
+        <div class="status-icon">🛡️</div>
+        <div class="status-info">
+          <h3>System Armed</h3>
+          <p>All sensors active</p>
+        </div>
+        <button class="action-btn">Disarm</button>
+      </div>
+
+      <div class="security-grid">
+         <div class="section">
+            <h3>Cameras</h3>
+            <div class="grid">
+              <app-widget 
+                *ngFor="let device of cameras()" 
+                [device]="device"
+                (toggle)="homeService.toggleDevice(device.id)">
+              </app-widget>
+            </div>
+         </div>
+         
+         <div class="section">
+            <h3>Locks & Sensors</h3>
+            <div class="grid">
+              <app-widget 
+                *ngFor="let device of locks()" 
+                [device]="device"
+                (toggle)="homeService.toggleDevice(device.id)">
+              </app-widget>
+            </div>
+         </div>
+      </div>
+      
+      <div class="activity-log glass-panel">
+        <h3>Recent Activity</h3>
+        <ul class="log-list">
+          <li class="log-item">
+            <span class="time">10:42 AM</span>
+            <span class="event">Front Door unlocked</span>
+          </li>
+           <li class="log-item">
+            <span class="time">09:15 AM</span>
+            <span class="event">Motion detected in Garden</span>
+          </li>
+           <li class="log-item">
+            <span class="time">08:00 AM</span>
+            <span class="event">System Armed</span>
+          </li>
+        </ul>
+      </div>
+    </div>

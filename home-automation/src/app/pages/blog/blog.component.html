@@ -1,0 +1,19 @@
+<div class="page-container">
+      <div class="page-header">
+        <h1>Blog & Resources</h1>
+        <p>Latest insights and tips for smart home automation</p>
+      </div>
+      
+      <div class="blog-grid">
+        <article class="blog-card glass-panel" *ngFor="let post of blogPosts">
+          <div class="blog-image">{{ post.icon }}</div>
+          <div class="blog-meta">
+            <span class="blog-date">{{ post.date }}</span>
+            <span class="blog-category">{{ post.category }}</span>
+          </div>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.excerpt }}</p>
+          <a href="#" class="read-more">Read More →</a>
+        </article>
+      </div>
+    </div>
